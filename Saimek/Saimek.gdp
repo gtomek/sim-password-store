@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="GDPtoHTML.xsl" type="text/xsl"?>
+<JCProject>
+    <!-- This section will defined the specific smart card type -->
+    <Card Name="Sim Card R99"/>
+    <!-- This section will defined the output file paths of the Project -->
+    <Path ClassDir="./classes"
+          ConversionDir="./oncard"/>
+    <Version Major="2" Minor="0"/>
+    <!-- This section will defined all the properties of the Application loaded on the smart card -->
+    <Application Name="Saimek"
+                 Label="This is a Gemplus example">
+        <!-- You can customize the properties of this Package or add another here -->
+        <Package Name="com.francetelecom.rd.saimek"
+                 Aid="893301FFFF0001FF44FFFF89534149"
+                 DapAlgoName=""
+                 DapSecretKey=""
+                 EepromSize=""
+                 FileSize=""
+                 LoadToken=""
+                 RamSize=""
+                 SecurityDomainAid="">
+        </Package>
+        <!-- If you add another Applet, you should increase his Index number -->
+        <Applet  ClassName="Saimek"
+                 Aid="893301FFFF0001FF44FFFF8953414901"
+                 Index="1">
+            <!-- If you add another Instance, you should increase his Index number -->
+            <Instance Aid="893301FFFF0001FF44FFFF8953414901"
+                      Index="1"
+                      ApplicationSpecificParameters=""
+                      EepromSize=""
+                      RamSize=""
+                      InstallToken=""
+                      Privilege="00">
+                <!-- You can customize the GSM parameters of this Instance here -->
+                <GSMParameter MaxNumberOfMenuEntries="01"
+                              Menus="0001"
+                              PriorityLevel="FF"
+                              TextMaxLength="14"
+                              TimerMaxNumber="01"/>
+	        <!--You can customize the SIM Access parameters of this Instance here-->
+                <SIMAccessParameter AccessDomainParameter="00" 
+                                    AccessDomainData=""/>
+	</Instance>
+        </Applet>
+    </Application>
+</JCProject>
+
+
